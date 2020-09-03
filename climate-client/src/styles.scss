@@ -1,0 +1,104 @@
+
+/* You can add global styles to this file, and also import other style files */
+
+/*---- Global styling ----*/
+* {
+    box-sizing: border-box;
+  }
+  html,
+  body,
+  .viewport {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background: #ecf0f3; // neumorphic
+  }
+  
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  /* Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+  
+  /*---- Loader ----*/
+  .app-loader,
+  .view-loader {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    .app-loader-background-one {
+      background-color: blue;
+    }
+    .app-loader-background-two {
+      background-color: pink;
+    }
+    .spinner {
+      width: 40px;
+      height: 40px;
+      position: relative;
+      margin: auto;
+    }
+  
+    .double-bounce1,
+    .double-bounce2 {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      opacity: 0.6;
+      position: absolute;
+      top: 0;
+      left: 0;
+      -webkit-animation: sk-bounce 2s infinite ease-in-out;
+      animation: sk-bounce 2s infinite ease-in-out;
+    }
+    .double-bounce2 {
+      -webkit-animation-delay: -1s;
+      animation-delay: -1s;
+    }
+    .view-loader {
+      display: block;
+      padding-top: 160px;
+      background: rgba(255, 255, 255, 0.3);
+      z-index: 9999;
+    }
+    .view-loader * {
+      margin: auto;
+    }
+    @-webkit-keyframes sk-bounce {
+      0%,
+      100% {
+        -webkit-transform: scale(0);
+      }
+      50% {
+        -webkit-transform: scale(1);
+      }
+    }
+    @keyframes sk-bounce {
+      0%,
+      100% {
+        transform: scale(0);
+        -webkit-transform: scale(0);
+      }
+      50% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+      }
+    }
+  }
+  

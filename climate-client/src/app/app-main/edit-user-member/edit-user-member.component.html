@@ -1,0 +1,11 @@
+<div class="scrollBelowNavBar container">
+  <div class="body">
+    <h2 class="font-weight-bold text-center">Edit User Profile</h2>
+    <app-raw-user-member
+    [userMember]="userMember"
+    [id]="id"
+    (createUser)="onUserUpdate($event)"
+    (deleteUserImages)="onDeleteImages($event)"
+    ></app-raw-user-member>
+  </div>
+</div>

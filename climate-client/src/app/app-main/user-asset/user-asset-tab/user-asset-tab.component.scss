@@ -1,0 +1,27 @@
+.mat-tab-group {
+  margin-bottom: 48px;
+}
+
+.scrollBelow{
+  position: fixed;
+  top: 76px; /* same height as navbar */
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.scrollBelowNavBar {
+  position: fixed;
+  top: 120px; /* same height as navbar */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-top: 16px;
+  overflow-y: scroll;
+}
+
+.flex-container2 {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}

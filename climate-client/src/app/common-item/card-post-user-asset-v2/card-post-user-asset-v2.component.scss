@@ -1,0 +1,268 @@
+.body {
+  position: relative;
+  min-height: 380px;
+  width: 354px;
+  background: #ffffff; // neumorphic
+  padding-top: 16px;
+  padding-right: 16px;
+  padding-left: 16px;
+  padding-bottom: 4px;
+  margin: 8px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.body:hover {
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.5);
+  transform: scale(1.01);
+}
+
+.user-photo {
+  /* make a square container */
+  width: 40px;
+  height: 40px;
+
+  /* fill the container, preserving aspect ratio, and cropping to fit */
+  background-size: cover;
+
+  /* center the image vertically and horizontally */
+  background-position: top center;
+
+  /* round the edges to a circle with border radius 1/2 container size */
+  border-radius: 50%;
+}
+
+.image-container {
+  position: relative;
+  text-align: center;
+  border-radius: 15px;
+  width: auto;
+  height: 200px;
+}
+
+.price-banner-container {
+  color: #ffffff;
+  margin-top: -6px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.asset-video {
+  /* make a square container */
+  width: 100%;
+  height: 100%;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+
+  /* fill the container, preserving aspect ratio, and cropping to fit */
+  background-size: cover;
+
+  /* center the image vertically and horizontally */
+  background-position: center center;
+
+  /* round the edges to a circle with border radius 1/2 container size */
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+.asset-photo {
+  /* make a square container */
+  width: 100%;
+  height: 100%;
+
+  /* fill the container, preserving aspect ratio, and cropping to fit */
+  background-size: cover;
+
+  /* center the image vertically and horizontally */
+  background-position: center center;
+
+  /* round the edges to a circle with border radius 1/2 container size */
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+.centered-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.banner-container {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.banner {
+  width: 80px;
+  padding: 8px;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 16px;
+}
+
+.card-container-item-top {
+  margin-left: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-user-name {
+  font-size: smaller;
+  color: black;
+  font-weight: bold;
+}
+
+.card-user-date {
+  font-size: 12px;
+  color: grey;
+}
+
+.icon-box {
+  position: relative;
+  height: 60px;
+  width: 60px;
+  background-color: #ecf0f3;
+  border-radius: 5px;
+  border: black;
+}
+
+hr {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+// THE STYLE IS FROM context menu
+.collection {
+  padding-left: 0;
+  list-style-type: none;
+  margin: 0.5rem 0 1rem 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.collection-item {
+  background-color: #fff;
+  line-height: 1.5rem;
+  padding: 10px 20px;
+  margin: 0;
+  border-bottom: 1px solid #e0e0e0;
+  list-style-type: none;
+}
+
+.my-menu {
+  background-color: #fff;
+  border: 1px solid rosybrown;
+  padding: 20px;
+}
+
+.user-menu {
+  background-color: #fafafa;
+  padding: 4pt;
+  font-size: 10pt;
+  z-index: 1000;
+  box-shadow: 0 0 12pt rgba(0, 0, 0, 0.25);
+  border-radius: 4pt;
+  padding: 0.5em 0 0.5em 0;
+  animation: fadeIn 0.1s ease-out;
+  opacity: 1;
+  display: block;
+}
+
+.user-menu hr {
+  border: none;
+  border-bottom: 1px solid #eee;
+}
+
+.user-menu div {
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+  color: #333;
+  padding: 0.5em 2em 0.5em 0.75em;
+  max-width: 18em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-menu div:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.user-menu div::before {
+  content: "";
+  float: left;
+  margin-right: 0.75em;
+  width: 0.5em;
+  height: 1em;
+  display: inline-block;
+}
+
+/* Animatinons */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.is-fadingIn {
+  -webkit-animation: fadeIn 0.1s ease-out;
+  animation: fadeIn 0.1s ease-out;
+  opacity: 1;
+  display: block;
+}
+
+.is-fadingOut {
+  -webkit-animation: fadeOut 0.1s ease-out;
+  animation: fadeOut 0.1s ease-out;
+  opacity: 0;
+  display: block;
+}

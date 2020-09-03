@@ -1,0 +1,72 @@
+<div class="container my-5">
+    <div *ngFor="let chat of chats">
+        <div class="mb-2">
+
+            <div class="chat-container">
+                <div *ngIf="chat.photoUserUrl.length > 0" class="user-photo"
+                    [ngStyle]="{ 'background-image': 'url(' + chat.photoUserUrl + ')' }">
+                </div>
+                <img *ngIf="chat.photoUserUrl.length === 0" class="user-photo"
+                    src="../../../assets/img/profile-image.png">
+                <div class="chat-container-item-top">
+                    <span class="chat-user-name">{{ chat.userFullName }}</span>
+                    <span class="chat-user-date">{{ chat.timestamp | date: 'fullDate' }}</span>
+                    <span class="chat-user-body">{{ chat.comment}}</span>
+                </div>
+            </div>
+
+            <br>
+
+            <div *ngFor="let reply of chat.reply">
+                <div class="mb-2 mx-3">
+
+                    <div class="chat-container">
+                        <div *ngIf="reply.photoUserUrl.length > 0" class="user-photo"
+                            [ngStyle]="{ 'background-image': 'url(' + reply.photoUserUrl + ')' }">
+                        </div>
+                        <img *ngIf="reply.photoUserUrl.length === 0" class="user-photo"
+                            src="../../../assets/img/profile-image.png">
+                        <div class="chat-container-item-top">
+                            <span class="chat-user-name-reply">{{ reply.userFullName }}</span>
+                            <span class="chat-user-date">{{ reply.timestamp | date: 'fullDate' }}</span>
+                            <span class="chat-user-body">{{ reply.comment}}</span>
+                        </div>
+                    </div>
+
+                    <br>
+
+                </div>
+            </div>
+
+            <form [formGroup]="detailFormReply" class="text-center" *ngIf="user">
+                <mat-form-field appearance="outline" class="d-block mb-2">
+                    <mat-label>Reply</mat-label>
+                    <textarea matInput [formControl]="comment" rows="1" placeholder="Any comment"></textarea>
+                    <mat-hint align="start"><strong>Tulis jawaban singkat</strong> </mat-hint>
+                    <mat-error *ngIf="comment.errors && (comment.dirty || comment.touched)">
+                        Dirty or Touched
+                    </mat-error>
+                    <mat-error *ngIf="comment.hasError('comment')">
+                        Required but not more than 250 characters
+                    </mat-error>
+
+
+                </mat-form-field>
+
+
+
+                <div class="my-4">
+                    <button class="mr-3" mat-raised-button color="primary" type="button"
+                        (click)="onSubmit(detailFormReply.value, chat, user)"
+                        [disabled]="!detailFormReply.valid">
+                        <span class="mr-1"></span>
+                        Send
+                    </button>
+                </div>
+            </form>
+
+        </div>
+
+        <hr>
+    </div>
+</div>

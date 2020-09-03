@@ -1,0 +1,53 @@
+.body {
+  padding: 16px;
+  margin: 32px auto;
+  max-width: 380px;
+  background: #ffffff; // neumorphic
+  // box-shadow: 3px 3px 6px rgba(#000, 0.4), -3px -3px 6px #ffffff; // neumorphic
+  border-radius: 15px;
+}
+
+.social-container {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.social {
+  height: 100px;
+  width: 100px;
+  border: 8px solid #ececec;
+  outline: none;
+  box-shadow: 10px 10px 15px rgba(70, 70, 70, 0.12),
+    -10px -10px 15px rgba(255, 255, 255, 0.5),
+    inset 10px 10px 15px rgba(70, 70, 70, 0.12),
+    inset -10px -10px 15px rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.social:hover {
+  box-shadow: inset 7px 7px 17px rgba(#000, 0.4), inset -7px -7px 17px #ffffff; // neumorphic
+}
+
+mat-label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+a {
+  cursor: pointer;
+}
+
+.red-text {
+  color: red;
+}
+
+.blue-text {
+  color: blue;
+}

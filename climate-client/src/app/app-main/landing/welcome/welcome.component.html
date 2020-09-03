@@ -1,0 +1,44 @@
+<ais-instantsearch [config]="config">
+  <div class="d-none d-md-block">
+    <div class="flex-container3" style="position: fixed; top: 16px; left: 25%">
+      <ais-search-box placeholder="Search"></ais-search-box>
+    </div>
+  </div>
+
+  <div class="scrollBelowNavBar">
+    <div class="container-fluid">
+      <div class="row mb-5">
+        <div style="margin-right: auto; margin-left: auto">
+          <div class="d-block d-md-none mb-3">
+            <p class="text-center">
+              <ais-search-box placeholder="Search"></ais-search-box>
+            </p>
+          </div>
+
+          <ais-hits>
+            <ng-template let-hits="hits">
+              <div class="flex-container1">
+                <app-card-post-v2
+                  style="margin-right: auto; margin-left: auto"
+                  *ngFor="let card of hits"
+                  [card]="card"
+                  [user]="user"
+                  (detailPosting)="onDetailPosting($event)"
+                  (location)="onLocation($event)"
+                  (updateLike)="onUpdateLike($event)"
+                  (detailUser)="onDetailUserLising($event)"
+                >
+                </app-card-post-v2>
+              </div>
+            </ng-template>
+          </ais-hits>
+
+          <div class="mt-3">
+            <hr class="mx-5" />
+            <ais-pagination></ais-pagination>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ais-instantsearch>

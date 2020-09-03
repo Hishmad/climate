@@ -1,0 +1,44 @@
+.user-photo {
+  /* make a square container */
+  width: 40px;
+  height: 40px;
+
+  /* fill the container, preserving aspect ratio, and cropping to fit */
+  background-size: cover;
+
+  /* center the image vertically and horizontally */
+  background-position: top center;
+
+  /* round the edges to a circle with border radius 1/2 container size */
+  border-radius: 50%;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.chat-container-item-top {
+  margin-left: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-user-name {
+  color: blue;
+  font-weight: bold;
+}
+
+.chat-user-date {
+  font-size: smaller;
+  color: grey;
+}
+
+.chat-user-name-reply {
+  color: darkmagenta;
+  font-weight: bold;
+}
+
+a {
+  cursor: pointer;
+}

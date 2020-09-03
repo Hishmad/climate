@@ -1,0 +1,67 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-icon {
+  margin-right: 12px;
+  font-size: 32px;
+}
+
+mat-toolbar {
+  background-color: #ffffff;
+  position: fixed;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  // box-shadow: inset 3px 3px 5px rgba(gainsboro, 0.4),
+  //   inset -3px -3px 7px rgba(gainsboro, 0.4); // neumorphic
+}
+
+mat-toolbar-row {
+  color: #189ad3;
+}
+
+mat-toolbar-row a:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+// pointer when hover in the nav bar
+mat-menu a:hover {
+  cursor: pointer;
+}
+
+.btn-signin {
+  width: 128px;
+  border-radius: 25px;
+  border: #189ad3;
+  background-color: #189ad3;
+  color: white;
+  font-weight: lighter;
+  font-size: small;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.btn-sign-about {
+  margin-bottom: 16px;
+}
+
+button:focus {
+  outline: none;
+}
+
+@media (min-width: 900px) {
+  .about {
+    display: none;
+  }
+}
+
+.root-menu-about {
+  color: #189ad3;
+  font-size: 16px;
+}
+
+hr {
+  margin-right: 16px;
+  margin-left: 16px;
+}

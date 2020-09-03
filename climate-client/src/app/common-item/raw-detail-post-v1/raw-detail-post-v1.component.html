@@ -1,0 +1,126 @@
+<owl-carousel-o [options]="customOptions">
+  <ng-template carouselSlide *ngIf="listOfVideo.length > 0">
+    <div class="slide">
+      <video
+        controls
+        muted
+        [src]="listOfVideo[0]"
+        controls
+        [poster]="listOfImage[0]"
+        style="height: 300px; width: 360px"
+      ></video>
+    </div>
+  </ng-template>
+  <ng-template
+    [width]="360"
+    [height]="300"
+    carouselSlide
+    *ngFor="let slide of listOfImage; let i = index"
+    [id]="i"
+  >
+    <div class="slide">
+      <img [src]="slide" />
+    </div>
+  </ng-template>
+</owl-carousel-o>
+
+<mat-card>
+  <div class="sub-body">
+    <mat-card-content>
+      <div *ngIf="card" class="text-center mt-3">
+        <span class="chat-user-body">{{ card.message }}</span>
+      </div>
+      <div class="text-center mt-3" *ngIf="card.address">
+        <span class="d-block">
+          {{ card.address }}
+        </span>
+        <span>
+          {{ card.city }}
+        </span>
+        <span>
+          {{ card.postCode }}
+        </span>
+      </div>
+
+      <div *ngIf="card" class="text-center mt-3">
+        <span
+          (click)="onYoutubeLinkUrl(card)"
+          *ngIf="card.youtubeUrl"
+          class="d-block youtube-url"
+        >
+          {{ card.youtubeUrl }}
+        </span>
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <span class="d-sm-none"
+          ><button class="wa-button" (click)="onWaShare(card, user)">
+            <i class="fab fa-whatsapp fa-2x"></i>
+          </button>
+        </span>
+        <span>
+          <button class="twitter-button" (click)="onTwitterShare(card, user)">
+            <i class="fab fa-twitter fa-2x"></i>
+          </button>
+        </span>
+        <span>
+          <button class="linkedin-button" (click)="onLinkedinShare(card, user)">
+            <i class="fab fa-linkedin fa-2x"></i>
+          </button>
+        </span>
+      </div>
+    </mat-card-content>
+  </div>
+</mat-card>
+
+<div (click)="onWaMe(card)" class="chat-container">
+  <span
+    ><img src="../../../assets/img/wa.png" style="width: 48px; height: 48px"
+  /></span>
+  <div class="chat-container-item-top">
+    <span class="chat-user-name">{{ card.userName }}</span>
+    <span class="chat-user-date">{{ card.userMobileNumber }}</span>
+  </div>
+</div>
+
+<form [formGroup]="detailForm" class="text-center" *ngIf="user">
+  <mat-form-field appearance="outline" class="d-block mb-2">
+    <div class="text-area-container">
+      <button class="btn-emoji" (click)="onTriggerEmoji()">
+        <i class="far fa-grin"></i>
+      </button>
+      <textarea
+        #textArea
+        class="text-area-input"
+        matInput
+        [formControl]="comment"
+        rows="1"
+        placeholder="Any comment"
+      ></textarea>
+    </div>
+
+    <mat-hint align="start"
+      ><strong>Kirim pesan singkat untuk {{ card.userName }}</strong>
+    </mat-hint>
+    <mat-error *ngIf="comment.errors && (comment.dirty || comment.touched)">
+      Dirty or Touched
+    </mat-error>
+    <mat-error *ngIf="comment.hasError('comment')">
+      Required but not more than 250 characters
+    </mat-error>
+  </mat-form-field>
+
+  <div class="my-4">
+    <button
+      class="mr-3"
+      mat-raised-button
+      color="primary"
+      type="button"
+      (click)="onSubmit(detailForm.value, card, user); openSnackBar()"
+      [disabled]="!detailForm.valid"
+    >
+      <span class="mr-1"></span>
+      Send
+    </button>
+  </div>
+</form>

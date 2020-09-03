@@ -1,0 +1,59 @@
+<div class="body" (contextmenu)="open($event, card)">
+
+  <div class="banner-container">
+    <div class="banner" [ngStyle]="{ 'background-color': bannerColor }">
+      <span style="display: block;  font-size: 12px;">{{ card.alertStatus }}</span>
+    </div>
+  </div>
+  <div class="card-container">
+    <div *ngIf="card.photoUserUrl.length > 0" class="user-photo"
+      [ngStyle]="{ 'background-image': 'url(' + card.photoUserUrl + ')' }">
+    </div>
+    <img *ngIf="card.photoUserUrl.length === 0" class="user-photo" src="../../../assets/img/profile-image.png">
+    <div class="card-container-item-top">
+      <span class="card-user-name">{{ card.userName }}</span>
+      <span class="card-user-date">{{ card.timestamp | date: 'fullDate' }}</span>
+    </div>
+  </div>
+  <div class="image-container">
+    <img (click)="onDetail(card)" *ngIf="listOfVideo.length === 0" class="asset-photo" [src]="listOfImage[0]"
+      alt="Photo of a unit">
+    <video muted="muted" *ngIf="listOfVideo.length > 0" [src]="listOfVideo[0]" controls class="asset-video"></video>
+
+  </div>
+
+  <div class="my-3" (click)="onDetail(card)">
+    <P>{{card.message}}</P>
+  </div>
+
+  <div class="d-flex justify-content-between mb-3">
+    <button class="icon-box" (click)="onLocation(card)">
+      <i class="fas fa-map-marker-alt fa-1x" style="color: #189ad3; "></i>
+    </button>
+    <div class="text-left mx-2" *ngIf="card.address" (click)="onDetail(card)">
+      <span class="d-block card-user-date">
+        {{ card.address }}
+      </span>
+      <span class="card-user-date">
+        {{ card.city }}
+      </span>
+      <span class="card-user-date">
+        {{ card.postCode }}
+      </span>
+    </div>
+  </div>
+
+  <hr />
+  <div (click)="onDetail(card)" class="d-flex justify-content-between mb-2">
+    <span class="card-user-date"
+      style="margin-right: auto; margin-left: auto;">{{ card.timestamp | date: "fullDate" }}</span>
+  </div>
+</div>
+
+<ng-template #userMenu let-card>
+  <section class="user-menu">
+    <div (click)="onEditAssetDetail(card)">Edit Asset Detail</div>
+    <div (click)="onRepostListing(card)">Repost Listing</div>
+    <div (click)="onUserDeleteListing(card)">Delete Listing</div>
+  </section>
+</ng-template>

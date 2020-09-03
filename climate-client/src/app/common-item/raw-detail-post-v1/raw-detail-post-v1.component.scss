@@ -1,0 +1,104 @@
+.text-area-container {
+  display: flex;
+}
+
+.btn-emoji {
+  display: inline-block;
+}
+
+.text-area-input {
+  display: inline-block;
+  margin-left: 16px;
+}
+
+.user-photo {
+  /* make a square container */
+  width: 40px;
+  height: 40px;
+
+  /* fill the container, preserving aspect ratio, and cropping to fit */
+  background-size: cover;
+
+  /* center the image vertically and horizontally */
+  background-position: top center;
+
+  /* round the edges to a circle with border radius 1/2 container size */
+  border-radius: 50%;
+}
+
+.sub-body {
+  max-width: 380px;
+  min-height: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.chat-container {
+  cursor: pointer;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+}
+
+.chat-container-item-top {
+  margin-top: 8px;
+  margin-left: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-user-name {
+  color: blue;
+  font-weight: bold;
+}
+
+.chat-user-date {
+  font-size: smaller;
+  color: grey;
+}
+
+.wa-button {
+  border-radius: 15px;
+  border: #25d366;
+  outline: none;
+  padding: 12px;
+  margin: 12px;
+  color: #ffffff;
+  background-color: #25d366;
+}
+
+.twitter-button {
+  border-radius: 15px;
+  border: #1da1f2;
+  outline: none;
+  padding: 12px;
+  margin: 12px;
+  color: #ffffff;
+  background-color: #1da1f2;
+}
+
+.linkedin-button {
+  border-radius: 15px;
+  border: #0e76a8 ;
+  outline: none;
+  padding: 12px;
+  margin: 12px;
+  color: #ffffff;
+  background-color: #0e76a8 ;
+}
+
+.youtube-url {
+  color: blue;
+  font-family: helvetica;
+  text-decoration: none;
+}
+
+.youtube-url:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.youtube-url:active {
+  color: black;
+}

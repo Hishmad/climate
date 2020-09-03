@@ -1,0 +1,49 @@
+<mat-toolbar>
+    <mat-toolbar-row class="container-fluid">
+        <a (click)="home()"><img src="../../assets/logo/climateid_200x200.png"></a>
+        <span class="spacer"></span>
+        <a class="d-none d-lg-block mr-3" [matMenuTriggerFor]="subMenuAbout">About</a>
+        <a class="mr-3" *ngIf="(memberUser$ | async) as user" (click)="userAsset(user)"><i
+                class="fas fa-edit fa-1x"></i></a>
+        <a class="mr-3" *ngIf="(memberUser$ | async) as user" (click)="newPost()"><i
+                class="fa fa-plus-square fa-1x"></i></a>
+        <a class="mr-3" *ngIf="(user$ | async) as user" (click)="userEdit(user)"><i
+                class="fas fa-user-edit fa-1x"></i></a>
+        <a class="d-none d-md-block mr-3" *ngIf="!(user$ | async) as user" (click)="signin()">
+
+            <button mat-flat-button class="btn-signin">Login/Sign
+                Up</button>
+        </a>
+        <a class="d-none d-md-block mr-3" *ngIf="(user$ | async) as user" (click)="signout()"> <button mat-flat-button
+                class="btn-signin">Sign Out</button></a>
+        <a class="d-block d-md-none" [matMenuTriggerFor]="rootMenu"><i class="fa fa-bars fa-1x" aria-hidden="true"></i>
+        </a>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-menu #rootMenu="matMenu">
+    <a mat-menu-item [matMenuTriggerFor]="subMenuAbout">
+        <span class="root-menu-about">About</span>
+    </a>
+    <hr>
+    <a class="btn-sign-about" mat-menu-item *ngIf="!(user$ | async) as user" (click)="signin()">
+        <button mat-flat-button class="btn-signin">Login/Sign
+            Up</button>
+    </a>
+    <a class="btn-sign-about" mat-menu-item *ngIf="(user$ | async) as user" (click)="signout()">
+        <button mat-flat-button class="btn-signin">Sign Out</button>
+    </a>
+</mat-menu>
+
+
+<mat-menu #subMenuAbout="matMenu">
+    <a mat-menu-item><span>About</span></a>
+    <a mat-menu-item><span>Blog</span></a>
+    <a mat-menu-item><span>Event</span></a>
+    <a mat-menu-item><span>FAQ</span></a>
+    <a mat-menu-item><span>Contact</span></a>
+</mat-menu>
+
+<main>
+    <router-outlet></router-outlet>
+</main>

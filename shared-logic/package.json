@@ -1,0 +1,18 @@
+{
+  "name": "shared-logic",
+  "version": "1.0.0",
+  "description": "Data Model and common shared functions",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc --lib es6 index.ts -d && npm pack"
+  },
+  "author": "Hishmad Abubakar Al Amudi",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^3.9.7",
+    "eslint": "^7.7.0"
+  },
+  "private": true
+}

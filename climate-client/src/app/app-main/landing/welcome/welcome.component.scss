@@ -1,0 +1,108 @@
+// set the scroll position below the nav bar
+.scrollBelowNavBar {
+  position: fixed;
+  top: 76px; /* same height as navbar */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-top: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-y: scroll;
+}
+
+// ais
+::ng-deep .ais-SearchBox-input {
+  background-color: white;
+  border-radius: 25px;
+  width: 100%;
+}
+
+::ng-deep .ais-SearchBox-input:focus {
+  outline: none;
+}
+
+::ng-deep .ais-SearchBox {
+  background-color: gainsboro;
+  border-radius: 25px;
+  padding: 4px;
+  width: 100%;
+}
+
+::ng-deep .ais-ClearRefinements-button {
+  background-color: #189ad3;
+}
+
+::ng-deep .ais-Pagination-item--selected .ais-Pagination-link {
+  background-color: #189ad3;
+}
+
+::ng-deep .ais-Highlight {
+  margin-left: 8px;
+  margin-right: 8px;
+  font-size: 12px;
+}
+
+::ng-deep .ais-RefinementList-count {
+  font-size: 12px;
+}
+
+::ng-deep .ais-ClearRefinements-button--disabled {
+  background-color: #189ad3;
+}
+
+::ng-deep .noUi-connect {
+  background-color: #189ad3;
+}
+
+::ng-deep .noUi-tooltip {
+  font-size: 12px;
+}
+
+::ng-deep .noUi-value-large {
+  font-size: 12px !important;
+}
+
+::ng-deep .noUi-value-horizontal {
+  font-size: 12px !important;
+}
+
+::ng-deep .noUi-value {
+  font-size: 12px !important;
+}
+
+// card position
+.flex-container1 {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.flex-container3 {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.flex-container4 {
+  width: 100vw;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .flex-container2 {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .scrollBelowNavBar {
+    top: 152px; /* same height as navbar */
+  }
+}

@@ -1,0 +1,26 @@
+<div class="scrollBelowNavBar">
+  <div class="container body" *ngIf="model$ | async as model">
+    <h2 class="font-weight-bold text-center">Detail Listing</h2>
+    <app-raw-detail-post-v1
+      [card]="model"
+      [user]="user"
+      (message)="onMessage($event)"
+      (wa)="onWaMe($event)"
+      (waShare)="onWaShare($event)"
+      (twitterShare)="onTwitterShare($event)"
+      (linkedinShare)="onLinkedinShare($event)"
+      (youtubeShare)="onYoutubeLinkUrl($event)"
+    >
+    </app-raw-detail-post-v1>
+  </div>
+  <div class="container">
+    <div *ngIf="chats$ | async as chats">
+      <app-card-message-v1
+        [chats]="chats"
+        [user]="user"
+        (replyMessage)="onReplyMessage($event)"
+      >
+      </app-card-message-v1>
+    </div>
+  </div>
+</div>

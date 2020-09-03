@@ -1,0 +1,63 @@
+<form [formGroup]="detailForm" class="text-center">
+    <div class="row mb-3">
+        <div class="col">
+            <mat-form-field appearance="outline" class="inner-max-width">
+                <mat-label>Full Name</mat-label>
+                <input matInput type="text" [formControl]="userFullName" />
+                <mat-hint align="start"><strong>Nama lengkap</strong></mat-hint>
+                <mat-error *ngIf="
+            userFullName.errors && (userFullName.dirty || userFullName.touched)
+          ">
+                    Dirty or Touched
+                </mat-error>
+                <mat-error *ngIf="userFullName.hasError('userFullName')">
+                    This filed is required
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col">
+            <mat-form-field appearance="outline" class="inner-max-width">
+                <mat-label>Mobile Phone</mat-label>
+                <input matInput type="number" [formControl]="userMobileNumber" placeholder="0817009999" />
+                <mat-hint align="start"><strong>Nomor HP contoh 08</strong> </mat-hint>
+                <mat-error *ngIf="
+            userMobileNumber.errors &&
+            (userMobileNumber.dirty || userMobileNumber.touched)
+          ">
+                    Dirty or Touched
+                </mat-error>
+                <mat-error *ngIf="userMobileNumber.hasError('userMobileNumber')">
+                    This filed is required
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="flex-img-outer-container">
+        <div class="flex-img-container-left" *ngIf="newListOfCloudinaryImages.length > 0">
+            <img class="sample-image" *ngFor="let thumb of newListOfCloudinaryImages" mat-card-image
+                [src]="thumb.thumbnail_url" (contextmenu)="open($event, thumb.public_id)" />
+        </div>
+        <div class="flex-img-container-right" *ngIf="listOfCloudinaryImages.length > 0">
+            <img class="sample-image" *ngFor="let thumb of listOfCloudinaryImages" mat-card-image
+                [src]="thumb.thumbnail_url" (contextmenu)="open($event, thumb.public_id)" />
+        </div>
+    </div>
+
+    <div class="my-5">
+        <a style="float: left; color: dodgerblue" (click)="onUploadImage()" type="button">
+            <i class="far fa-images fa-2x"></i>
+        </a>
+        <button class="mr-3" mat-raised-button color="primary" type="button"
+            (click)="onSubmit(detailForm.value); openSnackBar()" [disabled]="!detailForm.valid">
+            <span class="mr-1"></span>
+            Submit
+        </button>
+    </div>
+</form>
+
+<ng-template #userMenu let-thumb>
+    <section class="user-menu">
+        <div (click)="onUserDeleteImages(thumb)">Delete Image</div>
+    </section>
+</ng-template>

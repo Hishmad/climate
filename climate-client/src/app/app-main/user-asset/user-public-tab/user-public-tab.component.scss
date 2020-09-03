@@ -1,0 +1,15 @@
+.scrollBelowNavBar {
+  position: fixed;
+  top: 56px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-top: 8;
+  overflow-y: scroll;
+}
+
+.flex-container2 {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
