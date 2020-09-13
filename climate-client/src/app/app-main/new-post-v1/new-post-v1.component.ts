@@ -22,7 +22,6 @@ export class NewPostV1Component implements OnInit {
   isSpinner = false;
 
   constructor(
-    private router: Router,
     private storeUserMember: Store<ModelUserMemberV2State>,
     private dataModelService: DataModelService,
     private store: Store<ModelPostingState>
@@ -37,10 +36,7 @@ export class NewPostV1Component implements OnInit {
   onDetailNewPost(model: ModelPosting): void {
     this.isSpinner = true;
     const modelPosting = { ...model };
-    /** to model.posting.effects */
     this.store.dispatch(addModelPosting({modelPosting}));
-   
-
   }
 
   onDeleteImages(model: ModelPosting): void {

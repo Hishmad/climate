@@ -1,10 +1,12 @@
 <div class="scrollBelowNavBar container">
-  <div class="body" *ngIf="(user$ | async) as user">
-
+  <div class="body" *ngIf="user$ | async as user">
     <h2 class="font-weight-bold text-center">Post new message</h2>
     <mat-spinner *ngIf="isSpinner"></mat-spinner>
-    <app-raw-post-v1 [user]="user" (detailNewPost)="onDetailNewPost($event)"
-      (deletePostingImages)="onDeleteImages($event)">
+    <app-raw-post-v1
+      [user]="user"
+      (detailNewPost)="onDetailNewPost($event)"
+      (deletePostingImages)="onDeleteImages($event)"
+    >
     </app-raw-post-v1>
     <mat-spinner *ngIf="isSpinner"></mat-spinner>
   </div>

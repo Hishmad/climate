@@ -41,7 +41,6 @@ export class UserAssetTabComponent implements OnInit, OnDestroy {
     private winRef: WindowRefService,
     private route: ActivatedRoute,
     private router: Router,
-    private localService: DataModelService,
     private storePosting: Store<ModelPostingState>,
     private storeUser: Store<ModelUserState>,
     private storeLikes: Store<ModelPostingLikeState>,

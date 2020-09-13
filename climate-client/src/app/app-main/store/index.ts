@@ -4,6 +4,7 @@ import * as modelUserMemberV2Reducers from './model-user-member-store/model-user
 import * as modelPostingReducer from './model-posting-store/model-posting.reducer';
 import * as modelPostingLikeReducer from './model-posting-like-store/model-posting-like.reducer';
 import * as modelReviewReducer from './model-review-store/model-review.reducer';
+
 export const appMainStateKey = 'appMainStateKey';
 
 export interface AppMainState {

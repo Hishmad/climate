@@ -2,13 +2,13 @@
     <mat-toolbar-row class="container-fluid">
         <a (click)="home()"><img src="../../assets/logo/climateid_200x200.png"></a>
         <span class="spacer"></span>
+        <a class="d-none d-lg-block mr-3" (click)="home()">
+            Home</a>
         <a class="d-none d-lg-block mr-3" [matMenuTriggerFor]="subMenuAbout">About</a>
-        <a class="mr-3" *ngIf="(memberUser$ | async) as user" (click)="userAsset(user)"><i
-                class="fas fa-edit fa-1x"></i></a>
-        <a class="mr-3" *ngIf="(memberUser$ | async) as user" (click)="newPost()"><i
-                class="fa fa-plus-square fa-1x"></i></a>
-        <a class="mr-3" *ngIf="(user$ | async) as user" (click)="userEdit(user)"><i
-                class="fas fa-user-edit fa-1x"></i></a>
+        <a class="d-none d-lg-block mr-3" *ngIf="(memberUser$ | async) as user" (click)="userAsset(user)">
+            Asset</a>
+        <a class="d-none d-lg-block mr-3" *ngIf="(memberUser$ | async) as user" (click)="newPost()">New Posting</a>
+        <a class="d-none d-lg-block mr-3" *ngIf="(user$ | async) as user" (click)="userEdit(user)">User Profile</a>
         <a class="d-none d-md-block mr-3" *ngIf="!(user$ | async) as user" (click)="signin()">
 
             <button mat-flat-button class="btn-signin">Login/Sign
@@ -22,6 +22,18 @@
 </mat-toolbar>
 
 <mat-menu #rootMenu="matMenu">
+    <a mat-menu-item (click)="home()">
+        <span class="root-menu-about">Home</span></a>
+    <hr>
+    <a mat-menu-item class="d-block d-lg-none" *ngIf="(memberUser$ | async) as user" (click)="userAsset(user)">
+        <span class="root-menu-about">Asset</span></a>
+    <hr *ngIf="(memberUser$ | async) as user">
+    <a mat-menu-item class="d-block d-lg-none" *ngIf="(memberUser$ | async) as user" (click)="newPost()"><span
+            class="root-menu-new-post">New Posting</span></a>
+    <hr *ngIf="(memberUser$ | async) as user">
+    <a mat-menu-item class="d-bloack d-lg-none" *ngIf="(user$ | async) as user" (click)="userEdit(user)"><span
+            class="root-menu-about">User Profile</span></a>
+    <hr *ngIf="(user$ | async) as user">
     <a mat-menu-item [matMenuTriggerFor]="subMenuAbout">
         <span class="root-menu-about">About</span>
     </a>

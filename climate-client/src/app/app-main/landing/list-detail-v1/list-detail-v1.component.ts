@@ -33,8 +33,7 @@ export class ListDetailV1Component implements OnInit, OnDestroy {
     private winRef: WindowRefService,
     private storePosting: Store<ModelPostingState>,
     private storeUserMember: Store<ModelUserMemberV2State>,
-    private storeReview: Store<ModelReviewState>,
-    private service: DataModelService
+    private storeReview: Store<ModelReviewState>
   ) { }
 
   ngOnInit(): void {

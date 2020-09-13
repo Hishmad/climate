@@ -23,15 +23,15 @@ export class EditUserMemberComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private dataModelService: DataModelService,
     private store: Store<ModelUserMemberV2State>
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.fetchData();
   }
 
-  onUserUpdate(userMember: ModelUserMemberV2):void {
+  onUserUpdate(userMember: ModelUserMemberV2): void {
     const selectedModelMemberV2User = { ...userMember };
-    this.store.dispatch(updateModelUserMemberV2Edit({selectedModelMemberV2User}));
+    this.store.dispatch(updateModelUserMemberV2Edit({ selectedModelMemberV2User }));
   }
 
   onDeleteImages(userMember: ModelUserMemberV2): void {
@@ -48,7 +48,7 @@ export class EditUserMemberComponent implements OnInit, OnDestroy {
     this.store.dispatch(
       loadModelUserMemberV2Edit({ route: this.route })
     );
-     const userMember$ = this.store.pipe(
+    const userMember$ = this.store.pipe(
       select(selectModelUserMemberv2)
     );
 

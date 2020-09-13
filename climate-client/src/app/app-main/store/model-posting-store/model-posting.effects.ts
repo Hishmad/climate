@@ -2,7 +2,7 @@ import { DataModelService } from './../../../services/data-model.services';
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import * as fromModelPostingAction from './model-posting.actions';
+import * as fromActions from './model-posting.actions';
 import { mergeMap, map, catchError, tap } from 'rxjs/operators';
 import { of } from 'rxjs';
 
@@ -10,14 +10,14 @@ import { of } from 'rxjs';
 export class ModelPostingEffects {
   getListOfModelPosting$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(fromModelPostingAction.loadModelPostings),
+      ofType(fromActions.loadModelPostings),
       mergeMap((_) =>
         this.dataModelService.getListOfPosting$().pipe(
           map((modelPostings) =>
-            fromModelPostingAction.loadModelPostingsSuccess({ modelPostings })
+          fromActions.loadModelPostingsSuccess({ modelPostings })
           ),
           catchError((error) =>
-            of(fromModelPostingAction.loadModelPostingsFailure({ error }))
+            of(fromActions.loadModelPostingsFailure({ error }))
           )
         )
       )
@@ -26,17 +26,17 @@ export class ModelPostingEffects {
 
   getListOfModelPostingQueryUser$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(fromModelPostingAction.loadModelPostingsQueryUser),
+      ofType(fromActions.loadModelPostingsQueryUser),
       mergeMap(({ id }) =>
         this.dataModelService.getListOfUserPublicPosting$(id).pipe(
           map((modelPostings) =>
-            fromModelPostingAction.loadModelPostingsQueryUserSuccess({
+          fromActions.loadModelPostingsQueryUserSuccess({
               modelPostings,
             })
           ),
           catchError((error) =>
             of(
-              fromModelPostingAction.loadModelPostingsQueryUserFailure({ error })
+              fromActions.loadModelPostingsQueryUserFailure({ error })
             )
           )
         )
@@ -46,17 +46,17 @@ export class ModelPostingEffects {
 
   getListOfModelPostingQueryLikes$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(fromModelPostingAction.loadModelPostingsQueryLikes),
+      ofType(fromActions.loadModelPostingsQueryLikes),
       mergeMap(({ id }) =>
         this.dataModelService.getListOfUserLike$(id).pipe(
           map((modelPostings) =>
-            fromModelPostingAction.loadModelPostingsQueryLikesSuccess({
+          fromActions.loadModelPostingsQueryLikesSuccess({
               modelPostings,
             })
           ),
           catchError((error) =>
             of(
-              fromModelPostingAction.loadModelPostingsQueryLikesFailure({
+              fromActions.loadModelPostingsQueryLikesFailure({
                 error,
               })
             )
@@ -68,16 +68,16 @@ export class ModelPostingEffects {
 
   getModelPostingById$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(fromModelPostingAction.loadModelPosting),
+      ofType(fromActions.loadModelPosting),
       mergeMap(({ id }) =>
         this.dataModelService.getDocumentPosting$(id).pipe(
           map((selectedModelPosting) =>
-            fromModelPostingAction.loadModelPostingSuccess({
+          fromActions.loadModelPostingSuccess({
               selectedModelPosting,
             })
           ),
           catchError((error) =>
-            of(fromModelPostingAction.loadModelPostingFailure({ error }))
+            of(fromActions.loadModelPostingFailure({ error }))
           )
         )
       )
@@ -87,14 +87,14 @@ export class ModelPostingEffects {
   /** [new post v1 component] create new posting */
   createModelPosting$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(fromModelPostingAction.addModelPosting),
+      ofType(fromActions.addModelPosting),
       mergeMap(({ modelPosting }) =>
         this.dataModelService.wrapperCreateNewPost(modelPosting).pipe(
           map((modelPosting) =>
-            fromModelPostingAction.addModelPostingSuccess({ modelPosting })
+          fromActions.addModelPostingSuccess({ modelPosting })
           ),
           catchError((error) =>
-            of(fromModelPostingAction.addModelPostingFailure({ error }))
+            of(fromActions.addModelPostingFailure({ error }))
           )
         )
       ),
@@ -108,14 +108,14 @@ export class ModelPostingEffects {
 
   deleteModelPosting$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(fromModelPostingAction.deleteModelPosting),
+      ofType(fromActions.deleteModelPosting),
       mergeMap(({ modelPosting }) =>
         this.dataModelService.wrapperDeleteModelPosting(modelPosting).pipe(
           map((modelPosting) =>
-            fromModelPostingAction.deleteModelPostingSuccess({ modelPosting })
+          fromActions.deleteModelPostingSuccess({ modelPosting })
           ),
           catchError((error) =>
-            of(fromModelPostingAction.deleteModelPostingFailure({ error }))
+            of(fromActions.deleteModelPostingFailure({ error }))
           )
         )
       )
