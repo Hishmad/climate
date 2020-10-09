@@ -69,13 +69,12 @@ export class WelcomeComponent implements OnInit, OnDestroy {
     /**  */
     this.storePostings.dispatch(loadModelPostings());
     this.list$ = this.storePostings.pipe(select(selectModelPostings));
-
     this.config = this.configAlgolia();
 
     this.subscription.add(
       this.storeUser.select(selectModelUser).subscribe((user) => {
         if (user) {
-          this.user = user;
+          this.user = {...user};
         } else {
           this.user = null;
         }
@@ -85,7 +84,7 @@ export class WelcomeComponent implements OnInit, OnDestroy {
     this.subscription.add(
       this.storeUserMember.select(selectModelUserMemberv2).subscribe((user) => {
         if (user) {
-          this.userMember = user;
+          this.userMember = {...user};
         } else {
           this.userMember = null;
         }
