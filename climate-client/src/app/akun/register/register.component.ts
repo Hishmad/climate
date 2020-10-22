@@ -9,7 +9,7 @@ import {
   NgForm,
 } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -33,7 +33,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
 })
-export class RegisterComponent implements OnInit, OnDestroy {
+export class RegisterComponent implements OnInit {
   detailForm: FormGroup;
   isSpinner = false;
   matcher: MyErrorStateMatcher;
@@ -142,8 +142,4 @@ export class RegisterComponent implements OnInit, OnDestroy {
     };
   }
 
-  ngOnDestroy(): void {
-    this.detailForm = null;
-    this.matcher = null;
-  }
 }
