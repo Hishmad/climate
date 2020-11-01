@@ -52,10 +52,7 @@
       <img class="sample-image" *ngFor="let thumb of newListOfCloudinaryImages" mat-card-image
         [src]="thumb.thumbnail_url" (contextmenu)="open($event, thumb.public_id)" />
     </div>
-    <div class="flex-img-container-right" *ngIf="listOfCloudinaryImages.length > 0">
-      <img class="sample-image" *ngFor="let thumb of listOfCloudinaryImages" mat-card-image [src]="thumb.thumbnail_url"
-        (contextmenu)="open($event, thumb.public_id)" />
-    </div>
+    
   </div>
 
   <div class="my-4">

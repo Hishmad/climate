@@ -44,7 +44,6 @@ export class RawPostV1Component implements OnInit, AfterViewInit, OnDestroy {
 
   myWidget: any;
   newListOfCloudinaryImages: any[] = [];
-  listOfCloudinaryImages: any = [];
   _listOfImagePublicId: string[] = [];
 
   detailForm: FormGroup;
@@ -151,8 +150,7 @@ export class RawPostV1Component implements OnInit, AfterViewInit, OnDestroy {
   }
 
   onSubmit(formValues: any): void {
-    const length = this._listOfImagePublicId.length;
-    if (!this.hasImageVideo(length)) return;
+    if (!this.hasImageOrVideo(this._listOfImagePublicId.length)) return;
     const dtoCreate = this.dtoCreate(
       formValues,
       this.user,
@@ -241,6 +239,7 @@ export class RawPostV1Component implements OnInit, AfterViewInit, OnDestroy {
     this.deletePostingImages.emit(dtoCreate);
   }
 
+  
   private dtoCreate(
     formValues: any,
     user: ModelUserMemberV2,
@@ -358,7 +357,7 @@ export class RawPostV1Component implements OnInit, AfterViewInit, OnDestroy {
     return list.filter((item) => deleteItem !== item);
   }
 
-  private hasImageVideo(length: number): boolean {
+  private hasImageOrVideo(length: number): boolean {
     if (length > 0) {
       this._snackBar.open('Thank you, your message will be processed', 'OK', {
         duration: 5000,
