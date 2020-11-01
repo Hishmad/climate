@@ -10,7 +10,6 @@ import { filter, take } from 'rxjs/operators';
 
 declare let cloudinary: any;
 
-
 @Component({
   selector: 'app-raw-user-member',
   templateUrl: './raw-user-member.component.html',

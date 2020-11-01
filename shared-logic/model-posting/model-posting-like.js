@@ -1,5 +1,6 @@
 "use strict";
 exports.__esModule = true;
+exports.ModelPostingLike = void 0;
 var ModelPostingLike = /** @class */ (function () {
     function ModelPostingLike(id, idUser, idPosting, idAdmin, like, timestamp) {
         if (id === void 0) { id = ''; }

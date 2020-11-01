@@ -6,9 +6,7 @@ export declare class ModelPostingUrls {
     static DTO_DELETE_URL_MODEL_POSTING_MEDIA_LIST: string;
     static DTO_UPDATE_TRUE_POSTING_LIKE: string;
     static DTO_UPDATE_FALSE_POSTING_LIKE: string;
-    /**
-     * Below are the URLs for database collections
-     */
+    static MAIN_URL: string;
     /**  /lessgoModelPostingMessage/{id} */
     static URL_MODEL_POSTING_MESSAGE: string;
     /** /lessgoRefModelPostingMessage/{idUser}/{id} */

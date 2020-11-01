@@ -1,3 +1,16 @@
+export { GeoLoc } from './geo-document/geo-loc';
+export { GeoDocumentUrl } from './geo-document/geo-document-url';
+export { GeoDocument } from './geo-document/geo-document';
+export { GeoAddress } from './geo-document/geo-address';
+export { ModelReviewV2 } from './model-review/model-review-v2';
+export { ModelReviewUrls } from './model-review/model-review-urls';
+export { ModelPostingUrls } from './model-posting/model-posting-urls';
+export { ModelPostingLike } from './model-posting/model-posting-like';
+export { ModelPosting } from './model-posting/model-posting';
+export { DtoContainer } from './dto-container/dto-container';
+export { DtoUrl } from './dto-container/dto-url';
+export { CloudinaryContainer } from './dto-container/cloudinary-container';
+export { Dto } from './dto-container/dto';
 export { ModelUserUrls } from './model-user/model-user-urls';
 export { ModelUserPresence } from './model-user/model-user-presence';
 export { ModelUserMemberV2 } from './model-user/model-user-member-v2';

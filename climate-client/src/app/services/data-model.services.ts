@@ -5,7 +5,7 @@ import { DtoUrl } from './../../../../shared-logic/dto-container/dto-url';
 import { Dto } from './../../../../shared-logic/dto-container/dto';
 import { ModelUserUrls } from './../../../../shared-logic/model-user/model-user-urls';
 import { ModelUserMemberV2 } from './../../../../shared-logic/model-user/model-user-member-v2';
-import { switchMap, catchError, map } from 'rxjs/operators';
+import { switchMap, catchError } from 'rxjs/operators';
 import { ModelUser } from './../../../../shared-logic/model-user/model-user';
 import { ModelPostingUrls } from './../../../../shared-logic/model-posting/model-posting-urls';
 import { ModelPosting } from './../../../../shared-logic/model-posting/model-posting';
@@ -604,5 +604,7 @@ export class DataModelService {
     }
 
   }
+
+  
 
 }

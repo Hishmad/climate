@@ -1,5 +1,6 @@
 "use strict";
 exports.__esModule = true;
+exports.ModelReviewV2 = void 0;
 var ModelReviewV2 = /** @class */ (function () {
     function ModelReviewV2(id, idPosting, idHost, idUser, ratings, userFullName, photoUserUrl, comment, reply, idAdmin, timestamp) {
         if (id === void 0) { id = ''; }

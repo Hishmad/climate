@@ -11,9 +11,7 @@ export declare class ModelReviewUrls {
     static DTO_CREATE_MESSAGE_REPLY: string;
     static DTO_UPDATE_MESSAGE_REPLY: string;
     static DTO_DELETE_MESSAGE_REPLY: string;
-    /**
-     * Below are the URLs for database collections
-     */
+    static MAIN_URL: string;
     static URL_MODEL_REVIEW: string;
     static URL_MODEL_MESSAGE: string;
     /** /refPropertyRating/{idProperty}/{id} */

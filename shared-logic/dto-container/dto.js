@@ -1,5 +1,10 @@
 "use strict";
 exports.__esModule = true;
+exports.Dto = void 0;
+/**
+ * Data Transfer Object
+ * is a container.
+ */
 var Dto = /** @class */ (function () {
     function Dto(id, url, targetUrl, refUrl, aggregateUrl, payload, timestamp) {
         if (id === void 0) { id = ''; }

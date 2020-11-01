@@ -1,3 +1,7 @@
+/**
+ * Data Transfer Object
+ * is a container.
+ */
 export declare class Dto {
     id: string;
     url: string;

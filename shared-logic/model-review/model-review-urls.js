@@ -1,5 +1,6 @@
 "use strict";
 exports.__esModule = true;
+exports.ModelReviewUrls = void 0;
 var ModelReviewUrls = /** @class */ (function () {
     function ModelReviewUrls() {
     }
@@ -15,13 +16,11 @@ var ModelReviewUrls = /** @class */ (function () {
     ModelReviewUrls.DTO_CREATE_MESSAGE_REPLY = 'dtoCreateMessageReply';
     ModelReviewUrls.DTO_UPDATE_MESSAGE_REPLY = 'dtoUpdateMessageReply';
     ModelReviewUrls.DTO_DELETE_MESSAGE_REPLY = 'dtoDeleteMessageReply';
-    /**
-     * Below are the URLs for database collections
-     */
-    ModelReviewUrls.URL_MODEL_REVIEW = 'uuuModelReview';
-    ModelReviewUrls.URL_MODEL_MESSAGE = 'uuuModelMessage';
+    ModelReviewUrls.MAIN_URL = 'mainModelReviewUrls';
+    ModelReviewUrls.URL_MODEL_REVIEW = 'V1ModelReview';
+    ModelReviewUrls.URL_MODEL_MESSAGE = 'V1ModelMessage';
     /** /refPropertyRating/{idProperty}/{id} */
-    ModelReviewUrls.REF_RATING = 'refPropertyRating';
+    ModelReviewUrls.REF_RATING = 'V1refPropertyRating';
     return ModelReviewUrls;
 }());
 exports.ModelReviewUrls = ModelReviewUrls;

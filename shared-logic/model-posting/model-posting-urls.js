@@ -1,5 +1,6 @@
 "use strict";
 exports.__esModule = true;
+exports.ModelPostingUrls = void 0;
 var ModelPostingUrls = /** @class */ (function () {
     function ModelPostingUrls() {
     }
@@ -10,17 +11,15 @@ var ModelPostingUrls = /** @class */ (function () {
     ModelPostingUrls.DTO_DELETE_URL_MODEL_POSTING_MEDIA_LIST = 'dtoDeleteUrlModelPostingMediaList';
     ModelPostingUrls.DTO_UPDATE_TRUE_POSTING_LIKE = 'dtoUpdateTruePostingLike';
     ModelPostingUrls.DTO_UPDATE_FALSE_POSTING_LIKE = 'dtoUpdateFalsePostingLike';
-    /**
-     * Below are the URLs for database collections
-     */
+    ModelPostingUrls.MAIN_URL = 'mainModelPostingUrls';
     /**  /lessgoModelPostingMessage/{id} */
-    ModelPostingUrls.URL_MODEL_POSTING_MESSAGE = 'lessgoUrlModelPostingMessage';
+    ModelPostingUrls.URL_MODEL_POSTING_MESSAGE = 'V1UrlModelPostingMessage';
     /** /lessgoRefModelPostingMessage/{idUser}/{id} */
-    ModelPostingUrls.URL_REF_MODEL_POSTING_MESSAGE_USER = 'lessgoRefModelPostingMessageUser';
+    ModelPostingUrls.URL_REF_MODEL_POSTING_MESSAGE_USER = 'V1RefModelPostingMessageUser';
     /** /lessgoRefModelPostingMessageUserLike/{idPosting}/{idUser} */
-    ModelPostingUrls.URL_REF_MODEL_POSTING_MESSAGE_USER_LIKE = 'lessgoRefModelPostingMessageUserLike';
+    ModelPostingUrls.URL_REF_MODEL_POSTING_MESSAGE_USER_LIKE = 'V1RefModelPostingMessageUserLike';
     /** /lessgoRefModelUserMessagePostingLike/{idUser}/{idPosting} */
-    ModelPostingUrls.URL_REF_MODEL_USER_POSTING_MESSAGE_LIKE = 'lessgoRefModelUserMessagePostingLike';
+    ModelPostingUrls.URL_REF_MODEL_USER_POSTING_MESSAGE_LIKE = 'V1RefModelUserMessagePostingLike';
     return ModelPostingUrls;
 }());
 exports.ModelPostingUrls = ModelPostingUrls;

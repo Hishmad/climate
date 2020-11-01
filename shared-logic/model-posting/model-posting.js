@@ -1,40 +1,48 @@
 "use strict";
 exports.__esModule = true;
+exports.ModelPosting = void 0;
 var ModelPosting = /** @class */ (function () {
-    function ModelPosting(id, idUser, userEmail, userName, brokerHouse, userMobileNumber, photoUserUrl, message, listOfMedia, listOfThumbnail, listOfImagePublicId, listOfLikes, listOfCloudinaryImages, attachAsset, ownershipStatus, // Owner, Broker Co, Agent
-    timestamp, idAdmin) {
+    function ModelPosting(id, idUser, userName, userMobileNumber, photoUserUrl, message, listOfLikes, listOfImagePublicId, listOfCloudinaryImages, attachAsset, youtubeUrl, alertStatus, address, city, postCode, state, country, lat, lng, timestamp, idAdmin) {
         if (id === void 0) { id = ''; }
         if (idUser === void 0) { idUser = ''; }
-        if (userEmail === void 0) { userEmail = ''; }
         if (userName === void 0) { userName = ''; }
-        if (brokerHouse === void 0) { brokerHouse = ''; }
         if (userMobileNumber === void 0) { userMobileNumber = ''; }
         if (photoUserUrl === void 0) { photoUserUrl = ''; }
         if (message === void 0) { message = ''; }
-        if (listOfMedia === void 0) { listOfMedia = []; }
-        if (listOfThumbnail === void 0) { listOfThumbnail = []; }
-        if (listOfImagePublicId === void 0) { listOfImagePublicId = []; }
         if (listOfLikes === void 0) { listOfLikes = []; }
+        if (listOfImagePublicId === void 0) { listOfImagePublicId = []; }
         if (listOfCloudinaryImages === void 0) { listOfCloudinaryImages = []; }
         if (attachAsset === void 0) { attachAsset = {}; }
-        if (ownershipStatus === void 0) { ownershipStatus = ''; }
+        if (youtubeUrl === void 0) { youtubeUrl = ''; }
+        if (alertStatus === void 0) { alertStatus = ''; }
+        if (address === void 0) { address = ''; }
+        if (city === void 0) { city = ''; }
+        if (postCode === void 0) { postCode = 0; }
+        if (state === void 0) { state = ''; }
+        if (country === void 0) { country = ''; }
+        if (lat === void 0) { lat = 0; }
+        if (lng === void 0) { lng = 0; }
         if (timestamp === void 0) { timestamp = {}; }
         if (idAdmin === void 0) { idAdmin = ''; }
         this.id = id;
         this.idUser = idUser;
-        this.userEmail = userEmail;
         this.userName = userName;
-        this.brokerHouse = brokerHouse;
         this.userMobileNumber = userMobileNumber;
         this.photoUserUrl = photoUserUrl;
         this.message = message;
-        this.listOfMedia = listOfMedia;
-        this.listOfThumbnail = listOfThumbnail;
-        this.listOfImagePublicId = listOfImagePublicId;
         this.listOfLikes = listOfLikes;
+        this.listOfImagePublicId = listOfImagePublicId;
         this.listOfCloudinaryImages = listOfCloudinaryImages;
         this.attachAsset = attachAsset;
-        this.ownershipStatus = ownershipStatus;
+        this.youtubeUrl = youtubeUrl;
+        this.alertStatus = alertStatus;
+        this.address = address;
+        this.city = city;
+        this.postCode = postCode;
+        this.state = state;
+        this.country = country;
+        this.lat = lat;
+        this.lng = lng;
         this.timestamp = timestamp;
         this.idAdmin = idAdmin;
     }
