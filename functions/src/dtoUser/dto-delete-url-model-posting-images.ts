@@ -91,7 +91,8 @@ async function updatePosting(admin: any, model: ModelPosting): Promise<void> {
 
     if (docResult1.exists) {
         const posting: ModelPosting = { ...docResult1.data() };
-        const listOfCloudinaryImages = posting.listOfCloudinaryImages.filter(item => !model.listOfImagePublicId.some(id => item.public_id === id));
+        const listOfCloudinaryImages = posting.listOfCloudinaryImages
+        .filter(item => !model.listOfImagePublicId.some(id => item.public_id === id));
         await docResult1.ref.update({ listOfCloudinaryImages });
     }
 

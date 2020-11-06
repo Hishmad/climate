@@ -22,6 +22,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AppEffects } from './app.effects';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { ScullyLibModule } from '@scullyio/ng-lib';
+import { AngularFireAuthGuardModule } from '@angular/fire/auth-guard';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { ScullyLibModule } from '@scullyio/ng-lib';
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireDatabaseModule, // imports firebase/database, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+    AngularFireAuthGuardModule,
     AngularFireStorageModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
